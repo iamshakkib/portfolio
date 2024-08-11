@@ -29,7 +29,7 @@ scene.add(torus);
 
 // Lights
 
-const pointLight = new THREE.PointLight( 0xff00ff,5);
+const pointLight = new THREE.PointLight( 0xff00ff,10);
 pointLight.position.set(5, 5, 5);
 
 const ambientLight = new THREE.AmbientLight( 0x000033,10);
@@ -60,7 +60,7 @@ Array(200).fill().forEach(addStar);*/
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('image2.jpg');
 scene.background = spaceTexture;
 
 // Avatar
@@ -90,3 +90,11 @@ function animate() {
 }
 
 animate();
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener('resize', onWindowResize, false);
+onWindowResize();
