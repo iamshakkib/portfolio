@@ -3,11 +3,10 @@
   "name": "three-demo",
   "version": "0.0.0",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
-    "build":"npx webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "npx webpack --config webpack.config.js",
     "dev": "vite",
-    "build": "vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
