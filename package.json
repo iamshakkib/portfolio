@@ -5,7 +5,7 @@
   "scripts": {
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
-    "build":"react-scripts build",
+    "build":"npx webpack",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
