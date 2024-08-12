@@ -44,13 +44,28 @@ canvas {
 
 
 
-  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5rem;
-    padding: 2rem;
-    margin-bottom: var(--spacing);
-  }
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 5;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+  /*white-space: nowrap;Prevent text wrapping */
+}
+
+.social-icon{
+  color: #aaaaaa;
+  transition: color 0.2s;
+  text-decoration: none;
+  margin: 0 0;
+}
+.social-icon:hover{
+  color: #333333;
+}
 
   section {
     grid-column: 2 / 8;
@@ -59,6 +74,8 @@ canvas {
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+    overflow-wrap: break-word; /* Breaks long words onto the next line */
+    word-wrap: break-word;
   }
 
   blockquote {
@@ -79,3 +96,17 @@ canvas {
   .left {
     grid-column: 6 / 12;
   }
+
+  @media (max-width: 600px) {
+    header {
+        font-size: clamp(1rem, 2.5vw + 1rem, 3rem); /* Reduce font size for smaller screens */
+        padding: 1rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 600px) {
+  section {
+      font-size: clamp(1rem, 2.5vw + 1rem, 3rem); /* Reduce font size for smaller screens */
+      padding: 1rem; /* Adjust padding */
+  }
+}
