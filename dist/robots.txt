@@ -1,3 +1,2 @@
-//shakkibs seo//
 User-agent: *
 Disallow:
